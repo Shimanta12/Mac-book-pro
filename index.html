@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Macbook Pro</title>
+    <!-- bootstrap CSS cdn -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+</head>
+
+<body>
+    <main>
+        <section class="container p-3">
+            <div class="row">
+                <div class="col-md-5">
+                    <img src="images/mac.png" alt="" class="img-fluid">
+                </div>
+                <div class="col-md-7">
+                    <h2>Customize your Blue 24 -inch iMac with Apple M1 chip</h2>
+                    <p>Apple M1 chip with 8 core cpu with 4 performance cores and 4 efficiency cores, 7 core GPU and 16
+                        core
+                        Neural Engine, 8 GB unified memory, 256 GB SSD storage two thunderbolt/USB 4 ports Magic Mouse
+                        Magic
+                        Keyboard US English </p>
+                    <div>
+                        <h5>Memory</h5>
+                        <button onclick="updateMemoryCost('8GB')" class="btn btn-outline-secondary">8 GB unified
+                            memory</button>
+                        <button onclick="updateMemoryCost('16GB')" class="btn btn-outline-secondary">16 GB unified
+                            memory</button>
+                    </div>
+                    <div>
+                        <h5>Storage</h5>
+                        <button onclick="updateStorageCost('256GB')" class="btn btn-outline-secondary">256GB SSD
+                            storage</button>
+                        <button onclick="updateStorageCost('512GB')" class="btn btn-outline-secondary">512GB SSD
+                            storage</button>
+                        <button onclick="updateStorageCost('1TB')" class="btn btn-outline-secondary">1TB SSD
+                            storage</button>
+                    </div>
+                    <div>
+                        <h5>Choose your delivery option</h5>
+                        <button onclick="updateDeliveryCost('freePrime')" class="btn btn-outline-secondary">Friday,
+                            Aug 25
+                            FREE Prime Delivery</button>
+                        <button onclick="updateDeliveryCost('withDeliveryCost')"
+                            class="btn btn-outline-secondary">Friday, Aug
+                            21
+                            Delivery charge 20$</button>
+                    </div>
+                    <div class="w-50 mt-3">
+                        <div class="d-flex justify-content-between">
+                            <h5>Best Price</h5>
+                            <h5>$ <span id="best-price">1299</span></h5>
+                        </div>
+                        <div class="d-flex justify-content-between">
+                            <h5>Extra memory cost</h5>
+                            <h5>$ <span id="memory-cost">0</span></h5>
+                        </div>
+                        <div class="d-flex justify-content-between">
+                            <h5>Extra storage cost</h5>
+                            <h5>$ <span id="storage-cost">0</span></h5>
+                        </div>
+                        <div class="d-flex justify-content-between border-bottom border-dark border-2">
+                            <h5>Delivery charge</h5>
+                            <h5>$ <span id="delivery-charge">0</span></h5>
+                        </div>
+                        <div class="d-flex justify-content-between">
+                            <h5>Total</h5>
+                            <h5>$ <span id='total'>1299</span></h5>
+                        </div>
+                        <h5>Apply promo code</h5>
+                        <div class="d-flex justify-content-between">
+                            <input id="promo-input" class="form-control w-75 d-inline" type="text">
+                            <button onclick="promoDiscount()" id="promo-button" class="btn-danger ms-3 p-2 rounded"
+                                disabled>Apply</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <h1 class="text-center mt-5">Total: $<span id="discount-total">1299</span></h1>
+        </section>
+    </main>
+    <!-- external javaScript link -->
+    <script src="script.js"></script>
+</body>
+
+</html>
