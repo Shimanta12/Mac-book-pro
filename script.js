@@ -1,15 +1,17 @@
+// commonly used variables
 const memoryCost = document.getElementById('memory-cost');
 const storageCost = document.getElementById('storage-cost');
 const deliveryCharge = document.getElementById('delivery-charge');
 const total = document.getElementById('total');
 const discountTotal = document.getElementById('discount-total');
+const promoInput = document.getElementById('promo-input');
 
 // updating Extra memory cost
 function updateMemoryCost(memory) {
     if (memory == '8GB') {
         memoryCost.innerText = '0';
     } else if (memory == '16GB') {
-        memoryCost.innerText = '100'
+        memoryCost.innerText = '180'
     }
     updateTotal();
 }
@@ -44,8 +46,8 @@ function updateTotal() {
 function updatingDiscountTotal(bestPriceAmount, totalCost) {
     discountTotal.innerText = bestPriceAmount + totalCost;
 }
-// promo code confirmation
-document.getElementById('promo-input').addEventListener('keyup', function (event) {
+// promo code confirmation via Keyup
+promoInput.addEventListener('keyup', function (event) {
     const promoButton = document.getElementById('promo-button');
     if (event.target.value == 'stevekaku') {
         promoButton.removeAttribute('disabled');
@@ -54,8 +56,8 @@ document.getElementById('promo-input').addEventListener('keyup', function (event
         promoButton.setAttribute('disabled', true);
     }
 });
-document.getElementById('promo-input').addEventListener('change', function (event) {
-    console.log(event.target.value);
+// promo code confirmation via Change
+promoInput.addEventListener('change', function (event) {
     const promoButton = document.getElementById('promo-button');
     if (event.target.value == 'stevekaku') {
         promoButton.removeAttribute('disabled');
@@ -71,4 +73,5 @@ function promoDiscount() {
     const promoDiscount = totalAmount * 20 / 100;
     const totalWithPromoDiscount = totalAmount - promoDiscount;
     discountTotal.innerText = totalWithPromoDiscount;
+    promoInput.value = '';
 }
